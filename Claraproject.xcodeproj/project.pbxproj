@@ -14,7 +14,8 @@
 		AA0EA1EE27A99929000049B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0EA1EC27A99929000049B0 /* LaunchScreen.storyboard */; };
 		AA0EA1F627A99B4A000049B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA1F527A99B4A000049B0 /* LoginViewController.swift */; };
 		AA0EA1F827A99C10000049B0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA1F727A99C10000049B0 /* RegisterViewController.swift */; };
-		AA0EA20227AB295E000049B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20127AB295E000049B0 /* ProfileViewController.swift */; };
+		AA0EA20427AC4E80000049B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20327AC4E80000049B0 /* ProfileViewController.swift */; };
+		AA0EA20A27AC77EC000049B0 /* HomePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20927AC77EC000049B0 /* HomePageTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		AA0EA1EF27A99929000049B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0EA1F527A99B4A000049B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AA0EA1F727A99C10000049B0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		AA0EA20127AB295E000049B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AA0EA20327AC4E80000049B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AA0EA20927AC77EC000049B0 /* HomePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,8 @@
 				AA0EA1EF27A99929000049B0 /* Info.plist */,
 				AA0EA1F527A99B4A000049B0 /* LoginViewController.swift */,
 				AA0EA1F727A99C10000049B0 /* RegisterViewController.swift */,
-				AA0EA20127AB295E000049B0 /* ProfileViewController.swift */,
+				AA0EA20927AC77EC000049B0 /* HomePageTableViewController.swift */,
+				AA0EA20327AC4E80000049B0 /* ProfileViewController.swift */,
 			);
 			path = Claraproject;
 			sourceTree = "<group>";
@@ -146,9 +149,10 @@
 			files = (
 				AA0EA1F627A99B4A000049B0 /* LoginViewController.swift in Sources */,
 				AA0EA1E227A99926000049B0 /* AppDelegate.swift in Sources */,
-				AA0EA20227AB295E000049B0 /* ProfileViewController.swift in Sources */,
+				AA0EA20427AC4E80000049B0 /* ProfileViewController.swift in Sources */,
 				AA0EA1E427A99926000049B0 /* SceneDelegate.swift in Sources */,
 				AA0EA1F827A99C10000049B0 /* RegisterViewController.swift in Sources */,
+				AA0EA20A27AC77EC000049B0 /* HomePageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
