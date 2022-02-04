@@ -1,17 +1,14 @@
 //
-//  RegisterViewController.swift
+//  AddNewUserViewController.swift
 //  Claraproject
 //
-//  Created by Clara Renauro on 2/1/22.
+//  Created by Clara Renauro on 2/4/22.
 //
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-    
+class AddNewUserViewController: UIViewController {
 
-    @IBOutlet weak var clickButton: UISwitch!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,20 +23,7 @@ class RegisterViewController: UIViewController {
     override var shouldAutorotate: Bool {
            return false
        }
-    
-    @IBAction func goBack(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-        
-    }
-    
-    @IBAction func `switch`(_ sender: UISwitch) {
-        
-        if (sender.isOn == true){
-            clickButton.isEnabled = true
-        } else {
-            clickButton.isEnabled = false
-        }
-    }
+
     /*
     // MARK: - Navigation
 

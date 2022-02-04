@@ -16,6 +16,8 @@
 		AA0EA1F827A99C10000049B0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA1F727A99C10000049B0 /* RegisterViewController.swift */; };
 		AA0EA20427AC4E80000049B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20327AC4E80000049B0 /* ProfileViewController.swift */; };
 		AA0EA20A27AC77EC000049B0 /* HomePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20927AC77EC000049B0 /* HomePageTableViewController.swift */; };
+		AA0EA20E27AD734E000049B0 /* AddNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20D27AD734E000049B0 /* AddNewUserViewController.swift */; };
+		AA0EA21027AD73CA000049B0 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20F27AD73CA000049B0 /* UserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		AA0EA1F727A99C10000049B0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AA0EA20327AC4E80000049B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AA0EA20927AC77EC000049B0 /* HomePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewController.swift; sourceTree = "<group>"; };
+		AA0EA20D27AD734E000049B0 /* AddNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserViewController.swift; sourceTree = "<group>"; };
+		AA0EA20F27AD73CA000049B0 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +75,9 @@
 				AA0EA1F527A99B4A000049B0 /* LoginViewController.swift */,
 				AA0EA1F727A99C10000049B0 /* RegisterViewController.swift */,
 				AA0EA20927AC77EC000049B0 /* HomePageTableViewController.swift */,
+				AA0EA20D27AD734E000049B0 /* AddNewUserViewController.swift */,
 				AA0EA20327AC4E80000049B0 /* ProfileViewController.swift */,
+				AA0EA20F27AD73CA000049B0 /* UserDetailViewController.swift */,
 			);
 			path = Claraproject;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 			files = (
 				AA0EA1F627A99B4A000049B0 /* LoginViewController.swift in Sources */,
 				AA0EA1E227A99926000049B0 /* AppDelegate.swift in Sources */,
+				AA0EA21027AD73CA000049B0 /* UserDetailViewController.swift in Sources */,
+				AA0EA20E27AD734E000049B0 /* AddNewUserViewController.swift in Sources */,
 				AA0EA20427AC4E80000049B0 /* ProfileViewController.swift in Sources */,
 				AA0EA1E427A99926000049B0 /* SceneDelegate.swift in Sources */,
 				AA0EA1F827A99C10000049B0 /* RegisterViewController.swift in Sources */,
