@@ -36,10 +36,20 @@ class LoginViewController: UIViewController {
         //Image view 100x100
         //Radius 50
         
+       
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        
+        var network = "NA"
+        if(network != "available"){
+//          showAlert(title: "Network Alert", message: "Please check your network, you are not connected")
+
+            showIndicator(message: "Network Not Found")
+        }
+    }
+    
+    
+    @IBAction func alert(_ sender: Any) {
     }
     
 
