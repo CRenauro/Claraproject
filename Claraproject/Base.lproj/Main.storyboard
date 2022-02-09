@@ -37,12 +37,10 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAV-jR-EOa">
                                         <rect key="frame" x="8" y="8" width="314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcx-MC-mAB">
-                                        <rect key="frame" x="8" y="50" width="314" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="emailField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="q7z-pF-84R"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UkE-Pg-MAm">
                                         <rect key="frame" x="8" y="140" width="314" height="42"/>
@@ -52,7 +50,18 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Login">
                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J4i-dZ-CoN"/>
+                                        </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcx-MC-mAB">
+                                        <rect key="frame" x="8" y="50" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="passwordField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="JCR-ed-1L1"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -85,7 +94,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="bAV-jR-EOa" id="PO7-3g-9cI"/>
                         <outlet property="loginView" destination="4VL-3c-MmT" id="Ta8-PI-l6a"/>
+                        <outlet property="passwordField" destination="zcx-MC-mAB" id="RcR-zc-9Zf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -161,7 +172,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Iuj-R7-hRR" firstAttribute="trailing" secondItem="YMW-Xc-rnd" secondAttribute="trailing" id="3iB-H0-0aj"/>
-                            <constraint firstItem="Mqz-Bv-fGs" firstAttribute="top" secondItem="UDS-yh-Yc0" secondAttribute="bottom" constant="44" id="4es-It-g2V"/>
+                            <constraint firstItem="Mqz-Bv-fGs" firstAttribute="top" secondItem="UDS-yh-Yc0" secondAttribute="bottom" constant="141" id="4es-It-g2V"/>
                             <constraint firstItem="UDS-yh-Yc0" firstAttribute="centerX" secondItem="hKL-Xa-Eye" secondAttribute="centerX" id="7EI-O0-JBH"/>
                             <constraint firstItem="Iuj-R7-hRR" firstAttribute="leading" secondItem="cUx-R1-yjF" secondAttribute="leading" id="8OC-fq-Mki"/>
                             <constraint firstItem="UDS-yh-Yc0" firstAttribute="leading" secondItem="Mqz-Bv-fGs" secondAttribute="leading" id="9lm-10-XmQ"/>

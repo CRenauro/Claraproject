@@ -19,6 +19,9 @@
 		AA0EA20E27AD734E000049B0 /* AddNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20D27AD734E000049B0 /* AddNewUserViewController.swift */; };
 		AA0EA21027AD73CA000049B0 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA20F27AD73CA000049B0 /* UserDetailViewController.swift */; };
 		AACCF5B127B2CC3600AD78D7 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCF5B027B2CC3600AD78D7 /* ViewControllerExtension.swift */; };
+		AAFB3B6E27B402F50006776B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB3B6D27B402F50006776B /* Reachability.swift */; };
+		AAFB3B7227B406490006776B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB3B7127B406490006776B /* Constants.swift */; };
+		AAFB3B7427B40C420006776B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB3B7327B40C420006776B /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		AA0EA20D27AD734E000049B0 /* AddNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserViewController.swift; sourceTree = "<group>"; };
 		AA0EA20F27AD73CA000049B0 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		AACCF5B027B2CC3600AD78D7 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		AAFB3B6D27B402F50006776B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		AAFB3B7127B406490006776B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AAFB3B7327B40C420006776B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 				AA0EA20327AC4E80000049B0 /* ProfileViewController.swift */,
 				AA0EA20F27AD73CA000049B0 /* UserDetailViewController.swift */,
 				AACCF5B027B2CC3600AD78D7 /* ViewControllerExtension.swift */,
+				AAFB3B6D27B402F50006776B /* Reachability.swift */,
+				AAFB3B7127B406490006776B /* Constants.swift */,
+				AAFB3B7327B40C420006776B /* Utilities.swift */,
 			);
 			path = Claraproject;
 			sourceTree = "<group>";
@@ -162,9 +171,12 @@
 				AA0EA21027AD73CA000049B0 /* UserDetailViewController.swift in Sources */,
 				AA0EA20E27AD734E000049B0 /* AddNewUserViewController.swift in Sources */,
 				AA0EA20427AC4E80000049B0 /* ProfileViewController.swift in Sources */,
+				AAFB3B7427B40C420006776B /* Utilities.swift in Sources */,
 				AA0EA1E427A99926000049B0 /* SceneDelegate.swift in Sources */,
 				AA0EA1F827A99C10000049B0 /* RegisterViewController.swift in Sources */,
+				AAFB3B6E27B402F50006776B /* Reachability.swift in Sources */,
 				AA0EA20A27AC77EC000049B0 /* HomePageTableViewController.swift in Sources */,
+				AAFB3B7227B406490006776B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
