@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JLm-Hb-gZ4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -142,7 +142,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UDS-yh-Yc0">
                                 <rect key="frame" x="45" y="500" width="324" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqz-Bv-fGs">
                                 <rect key="frame" x="45" y="675" width="324" height="52"/>
@@ -152,6 +152,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Register">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="register:" destination="rTp-sE-tbR" eventType="touchUpInside" id="fzR-X5-QEO"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I agree to the Terms of Service and Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iF0-ct-YZ9">
                                 <rect key="frame" x="121" y="593" width="238" height="60"/>
@@ -163,9 +166,6 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="switch" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-Qv-L0A">
                                 <rect key="frame" x="45" y="608" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="switch:" destination="rTp-sE-tbR" eventType="valueChanged" id="4Fa-fq-2zq"/>
-                                </connections>
                             </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rre-gi-tdI"/>
@@ -205,6 +205,10 @@
                     </view>
                     <connections>
                         <outlet property="clickButton" destination="v5A-Qv-L0A" id="446-vI-GJa"/>
+                        <outlet property="email" destination="YMW-Xc-rnd" id="8HO-Yr-hrV"/>
+                        <outlet property="firstName" destination="cUx-R1-yjF" id="VfG-sL-cdY"/>
+                        <outlet property="lastName" destination="Iuj-R7-hRR" id="ZE2-1o-y6W"/>
+                        <outlet property="password" destination="UDS-yh-Yc0" id="MaT-c4-kwU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIw-3p-8it" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

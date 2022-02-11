@@ -9,7 +9,15 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-
+    @IBOutlet weak var firstName: UITextField!
+    
+    @IBOutlet weak var lastName: UITextField!
+    
+    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
+    
+    
     @IBOutlet weak var clickButton: UISwitch!
     
     override func viewDidLoad() {
@@ -25,19 +33,53 @@ class RegisterViewController: UIViewController {
     }
 
     
+    @IBAction func register(_ sender: UIButton) {
+        
+        let firstName = firstName.text
+        let lastName = lastName.text
+        let password = password.text
+        let providedEmailAddress = email.text
+        
+        let isEmailAddressValid = isValidEmailAddress(emailAddressString: providedEmailAddress!)
+        
+        if isEmailAddressValid
+        {
+            print("valid")
+        } else {
+            print("not valid")
+        }
+    }
+    
+    
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+      
+      var returnValue = true
+      let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+      
+      do {
+          let regex = try NSRegularExpression(pattern: emailRegEx)
+          let nsString = emailAddressString as NSString
+          let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+          
+          if results.count == 0
+          {
+              returnValue = false
+          }
+          
+      } catch let error as NSError {
+          print("invalid regex: \(error.localizedDescription)")
+          returnValue = false
+      }
+      
+      return  returnValue
+    }
+
     @IBAction func goBack(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
         
     }
     
-    @IBAction func `switch`(_ sender: UISwitch) {
-        
-        if (sender.isOn == true){
-            clickButton.isEnabled = true
-        } else {
-            clickButton.isEnabled = false
-        }
-    }
+
     /*
     // MARK: - Navigation
 
