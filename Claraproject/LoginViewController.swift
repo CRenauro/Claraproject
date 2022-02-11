@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [#colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor, UIColor(red: 9/255, green: 168/255, blue: 157/255, alpha: 1).cgColor]
@@ -27,20 +26,14 @@ class LoginViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5) // Right
 
     }
-    
-    override var shouldAutorotate: Bool {
-           return false
-       }
-    override func viewWillAppear(_ animated: Bool) {
-        loginView.layer.cornerRadius = 12
-        loginView.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
-        loginView.layer.borderWidth = 2.0
-        //Image view 100x100
-        //Radius 50
-        
-       
-        
-    }
+
+//    override func viewWillAppear(_ animated: Bool) {
+//        loginView.layer.cornerRadius = 12
+//        loginView.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
+//        loginView.layer.borderWidth = 2.0
+//        //Image view 100x100
+//        //Radius 50
+//    }
     override func viewDidAppear(_ animated: Bool) {
 //        var network = "NA"
 //        if(network != "available"){
@@ -53,8 +46,7 @@ class LoginViewController: UIViewController {
     @IBAction func alert(_ sender: Any) {
         
     }
-    
-    
+
     
     @IBAction func emailField(_ sender: Any) {
     }
@@ -65,33 +57,28 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginUser(_ sender: Any) {
-        
-
         if emailField.text!.isEmpty || passwordField.text!.isEmpty
-            
         {
            showAlert(title: "Try Again", message: "Email and Password are mandatory")
             return
         }
-        printContent(Utilities.isNetworkAvailable())
-        
         if !Utilities.isNetworkAvailable() == false
         {
             showAlert(title: "Network error", message:  "No internet connection")
             return
         }
-        
         self.showIndicator(message: "Authenticating")
         
         let loginURL = BASE_URL + LOGIN
-        var loginRequest = URLRequest(url: URL(string: loginURL)!)
+        var loginRequest = URLRequest(url: URL(string: loginURL)!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+        
         loginRequest.httpMethod = "POST"
         
 //        loginRequest.addValue("Content-Type", forHTTPHeaderField: "application/JSON")
         
         
         //create a dictionary
-        let params = ["email": emailField.text, "password": passwordField.text]
+        let params = ["email": emailField.text!, "password": passwordField.text!]
         
         //convert to JSON
         loginRequest.httpBody = try?JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
@@ -99,13 +86,16 @@ class LoginViewController: UIViewController {
         URLSession.shared.dataTask(with: loginRequest) { (data, response, error) in
             guard let Data = data, error==nil else
             {
-                
                 //switch to main thread
                 return
             }
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200
+            if let httpStatus = (response as? HTTPURLResponse)
             {
-                return
+                if(httpStatus.statusCode != 200)
+                {
+                    print(httpStatus.statusCode)
+                    return
+                }
             }
             // update UI on Primary Thread/Ui Thread/ main thread
             DispatchQueue.main.async {

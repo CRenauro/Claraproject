@@ -23,9 +23,7 @@ class RegisterViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5) // Right
         // Do any additional setup after loading the view.
     }
-    override var shouldAutorotate: Bool {
-           return false
-       }
+
     
     @IBAction func goBack(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
