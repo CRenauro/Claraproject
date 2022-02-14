@@ -7,12 +7,34 @@
 
 import UIKit
 
+//class Downloader{
+//    class func downloadImageWithURL(url: String) -> UIImage{
+//        let data = NSData(contentsOf: NSURL(string: url)! as URL)
+//        return UIImage(data: data! as Data)!
+//
+//    }
+//}
+
+
 class UserDetailViewController: UIViewController {
+    
+    var user: User?
     
     
     @IBOutlet weak var cardView: UIView!
     
+    @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var userEmail: UILabel!
+    
+    
+    
     @IBOutlet weak var imageView: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +63,10 @@ class UserDetailViewController: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
+        
+        userName.text = user!.first_name + "" + user!.last_name
+        userEmail.text = user!.email
+        userImage.image = Downloader.downloadImageWithURL(url: user!.avatar)
         
     }
     /*
