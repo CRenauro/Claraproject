@@ -17,6 +17,9 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    
+    @IBOutlet weak var logOut: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,9 +31,7 @@ class ProfileViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5) // Right
 
     }
-    override var shouldAutorotate: Bool {
-           return false
-       }
+
     
     override func viewWillAppear(_ animated: Bool) {
         cardView.layer.cornerRadius = 12
@@ -47,6 +48,12 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
     }
+    
+
+    @IBAction func logOut(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 
     /*

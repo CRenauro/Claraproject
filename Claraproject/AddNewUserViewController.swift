@@ -8,6 +8,7 @@
 import UIKit
 
 class AddNewUserViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,12 @@ class AddNewUserViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
    
-
+ 
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

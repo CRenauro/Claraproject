@@ -293,6 +293,7 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="brain.head.profile" catalog="system" id="dai-yu-DKZ">
+                                <color key="tintColor" systemColor="systemGreenColor"/>
                                 <connections>
                                     <segue destination="hbd-nE-Hrh" kind="presentation" identifier="UserProfileSegue" modalPresentationStyle="fullScreen" id="9Cd-ge-fEr"/>
                                 </connections>
@@ -319,7 +320,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wix-VY-zJU">
                                 <rect key="frame" x="20" y="44" width="374" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="cancel" id="SOJ-n8-dsS"/>
+                                    <barButtonItem systemItem="cancel" id="SOJ-n8-dsS">
+                                        <connections>
+                                            <action selector="cancel:" destination="GRX-Hn-aaJ" id="SJc-C5-GFg"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="N67-RP-cIN"/>
                                     <barButtonItem systemItem="save" id="dhY-na-4lW"/>
                                 </items>
@@ -426,6 +431,10 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="hbd-nE-Hrh" eventType="touchUpInside" id="6SM-qY-MVJ"/>
+                                    <action selector="logOut:" destination="Y8j-ib-vrE" eventType="touchUpInside" id="jAi-Sk-idW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1xr-xV-Fpe"/>
@@ -448,6 +457,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovb-Jo-utK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Y8j-ib-vrE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3666.666666666667" y="69.642857142857139"/>
         </scene>
