@@ -463,6 +463,9 @@
                             <constraint firstItem="Y3h-Pt-eF4" firstAttribute="trailing" secondItem="TNR-uA-pRg" secondAttribute="trailing" id="ynI-G6-Q69"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userView" destination="TNR-uA-pRg" id="T2K-xC-D5f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovb-Jo-utK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Y8j-ib-vrE" userLabel="Exit" sceneMemberID="exit"/>

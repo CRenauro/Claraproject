@@ -13,6 +13,9 @@ class ProfileViewController: UIViewController {
 
     var users = [User]()
     
+    
+    @IBOutlet weak var userView: ProfileView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,9 +28,9 @@ class ProfileViewController: UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5) // Left
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5) // Right
         
-//        UIView.dataSource = self
-//        UIView.delegate = self
-//        getUsers(1)
+//        ProfileView.dataSource = self
+//        ProfileView.delegate = self
+            getUser()
         
         
 
@@ -39,54 +42,52 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        if users.isEmpty
+        {
+            getUser()
+        }
     }
     
     
     
-    func getUser(completion: @escaping([User]) -> ())
+    func getUser()
     {
         
         let userURL = URL(string: BASE_URL + USERS)!
         let userRequest = URLRequest(url: userURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         
-        URLSession.shared.dataTask(with: userRequest) { data, response, error in let users = try! JSONDecoder().decode([User].self, from: data!)
-            DispatchQueue.main.async {
-                completion(users)
+        URLSession.shared.dataTask(with: userRequest){
+            (data, response, error) in
+            guard let Data = data, error==nil
+            else
+            {
+                print(error as Any)
+                return
+            }
+            if let httpStatus = (response as? HTTPURLResponse)
+            {
+                if(httpStatus.statusCode != 200)
+                {
+                    print(httpStatus.statusCode)
+                    return
+                }
+            }
+            DispatchQueue.main.async
+            {
+                    self.extractData(data: Data)
             }
         }.resume()
         
     }
-//        URLSession.shared.dataTask(with: userRequest){
-//            (data, response, error) in
-//            guard let Data = data, error==nil
-//            else
-//            {
-//                print(error as Any)
-//                return
-//            }
-//            if let httpStatus = (response as? HTTPURLResponse)
-//            {
-//                if(httpStatus.statusCode != 200)
-//                {
-//                    print(httpStatus.statusCode)
-//                    return
-//                }
-//            }
-////            DispatchQueue.main.async
-////            {
-////                    self.extractData(data: Data)
-////            }
-//        }.resume()
-//    }
-//    func extractData(data: Data)
-//    {
-//        print("got data")
-//        hideIndicator()
-//        let users = try! JSONDecoder().decode([User].self, from: data)
-//        print(users?.total)
-//        self.users = User.data
-////        userView.reloadData()
-//    }
+    func extractData(data: Data){
+          print("Got data!")
+          hideIndicator()
+        let users = try? JSONDecoder().decode(Result.self, from: data)
+//          print(users?.total)
+          self.users = users!.data
+//          userView.reloadData()
+      }
+        
+ 
  
 }
