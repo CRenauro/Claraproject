@@ -15,11 +15,12 @@ class Downloader{
     }
 }
 
-class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, AddUserProtocolDelegate {
     
-    var users = [User]()
+    var user = [User]()
 
     @IBOutlet weak var userView: UITableView!
+    var users = [User]()
     let itemsPerBatch = 15
     var currentRow: Int = 1
 
@@ -45,6 +46,12 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if users.isEmpty
+        {
+            getUsersList()
+        }
+    }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,11 +76,11 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
 
     func getUsersList()
     {
-        if !Utilities.isNetworkAvailable()
-        {
-            showAlert(title: "No network", message: "No Network. Please check your connection")
-        }
-        showIndicator(message: "getting users")
+//        if !Utilities.isNetworkAvailable()
+//        {
+//            showAlert(title: "No network", message: "No Network. Please check your connection")
+//        }
+//        showIndicator(message: "getting users")
         let userURL = URL(string: BASE_URL + USERS)!
         let userRequest = URLRequest(url: userURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         
@@ -100,72 +107,15 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         }.resume()
         
     }
-    func extractData(data: Data)
-    {
-        print("got data")
-        hideIndicator()
+    func extractData(data: Data){
+          print("Got data!")
+          hideIndicator()
         let users = try? JSONDecoder().decode(Result.self, from: data)
-        print(users?.total)
-        self.users = users!.data
-        userView.reloadData()
-    }
+//          print(users?.total)
+          self.users = users!.data
+          userView.reloadData()
+      }
    
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-     MARK: - Navigation
-
-     In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         Get the new view controller using segue.destination.
-         Pass the selected object to the new view controller.
-    }
-    */
-    
     
     //DEMO TO STOP SEGUE FUNCTION:
 //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -187,6 +137,22 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         
         userDetailViewController.user = userToSendToSecondView
         }
+    
+        if segue.identifier == "AddUserSegue"
+        {
+            let addUserController = segue.destination as!
+                AddNewUserViewController
+            addUserController.addUserDelegate = self
+        }
     }
-
+    func CancelAddingUser(_ controller: AddNewUserViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    func AddNewUser(_ controller: AddNewUserViewController, user: User) {
+        
+        // or users.append
+        users.insert(user, at: 0)
+        userView.reloadData()
+        controller.dismiss(animated: true, completion: nil)
+    }
 }

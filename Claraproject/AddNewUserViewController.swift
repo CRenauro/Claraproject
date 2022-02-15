@@ -7,9 +7,25 @@
 
 import UIKit
 
+protocol AddUserProtocolDelegate: AnyObject {
+    func CancelAddingUser(_ controller:
+    AddNewUserViewController)
+    
+    func AddNewUser(_ controller: AddNewUserViewController, user: User)
+        
+    }
+
 class AddNewUserViewController: UIViewController {
     
-
+    
+    @IBOutlet weak var firstName: UITextField!
+    
+    @IBOutlet weak var lastName: UITextField!
+    
+    @IBOutlet weak var email: UITextField!
+    
+    weak var addUserDelegate: AddUserProtocolDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,12 +38,15 @@ class AddNewUserViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
    
- 
-    
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func cancelAddUser(_ sender: Any) {
+        addUserDelegate?.CancelAddingUser(self)
     }
+    @IBAction func saveUser(_ sender: Any) {
+        let user = User(id: 12, fname: firstName.text!, lName: lastName.text!, email: email.text!)
+        addUserDelegate?.AddNewUser(self, user: user)
+    }
+    
+
     /*
     // MARK: - Navigation
 
