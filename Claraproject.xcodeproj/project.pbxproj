@@ -20,7 +20,6 @@
 		AA0F201427B6B70C00580CE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F201327B6B70C00580CE4 /* User.swift */; };
 		AA0F201827B6CEE500580CE4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F201727B6CEE500580CE4 /* HomeViewController.swift */; };
 		AA0F201A27B6E7B200580CE4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F201927B6E7B200580CE4 /* HomeTableViewCell.swift */; };
-		AA0F204927BC3F1E00580CE4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F204827BC3F1E00580CE4 /* ProfileView.swift */; };
 		AACCF5B127B2CC3600AD78D7 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACCF5B027B2CC3600AD78D7 /* ViewControllerExtension.swift */; };
 		AAFB3B6E27B402F50006776B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB3B6D27B402F50006776B /* Reachability.swift */; };
 		AAFB3B7227B406490006776B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB3B7127B406490006776B /* Constants.swift */; };
@@ -43,7 +42,6 @@
 		AA0F201327B6B70C00580CE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA0F201727B6CEE500580CE4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA0F201927B6E7B200580CE4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		AA0F204827BC3F1E00580CE4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AACCF5B027B2CC3600AD78D7 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		AAFB3B6D27B402F50006776B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AAFB3B7127B406490006776B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				AAFB3B7127B406490006776B /* Constants.swift */,
 				AAFB3B7327B40C420006776B /* Utilities.swift */,
 				AA0F201927B6E7B200580CE4 /* HomeTableViewCell.swift */,
-				AA0F204827BC3F1E00580CE4 /* ProfileView.swift */,
 			);
 			path = Claraproject;
 			sourceTree = "<group>";
@@ -189,7 +186,6 @@
 				AACCF5B127B2CC3600AD78D7 /* ViewControllerExtension.swift in Sources */,
 				AA0EA21027AD73CA000049B0 /* UserDetailViewController.swift in Sources */,
 				AA0F201827B6CEE500580CE4 /* HomeViewController.swift in Sources */,
-				AA0F204927BC3F1E00580CE4 /* ProfileView.swift in Sources */,
 				AA0EA20E27AD734E000049B0 /* AddNewUserViewController.swift in Sources */,
 				AA0EA20427AC4E80000049B0 /* ProfileViewController.swift in Sources */,
 				AAFB3B7427B40C420006776B /* Utilities.swift in Sources */,

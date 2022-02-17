@@ -13,8 +13,13 @@ class ProfileViewController: UIViewController {
 
     var users = [User]()
     
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+
+    @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var userView: ProfileView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +38,9 @@ class ProfileViewController: UIViewController {
 //        userName.text = user!.first_name + "" + user!.last_name
 //        userEmail.text = user!.email
 //        userImage.image = Downloader.downloadImageWithURL(url: user!.avatar)
+        
+        
+
         
             getUser()
         
@@ -90,8 +98,9 @@ class ProfileViewController: UIViewController {
 //          print(users?.total)
           self.users = users!.data
 //          userView.reloadData()
-      }
         
+      }
+    
  
  
 }

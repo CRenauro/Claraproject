@@ -48,8 +48,39 @@ class RegisterViewController: UIViewController {
         } else {
             print("not valid")
         }
+         
+        if (clickButton.isEnabled == true && isValidEmailAddress(emailAddressString: providedEmailAddress!)){
+            let alertController = UIAlertController(title: "Welcome!", message: "You are now registered", preferredStyle: .alert)
+
+                    let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+
+                        // Code in this block will trigger when OK button tapped.
+                        print("Ok button tapped");
+
+                    }
+
+                    alertController.addAction(OKAction)
+
+                    self.present(alertController, animated: true, completion:nil)
+            
+        } else {
+            let alert = UIAlertController(title: "Alert!", message: "You cannot register!", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "cancel", style: .destructive, handler: nil)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+       
     }
     
+    @IBAction func onOff(_ sender: UISwitch) {
+        if (sender.isOn == true){
+            clickButton.isEnabled = true
+        } else {
+            clickButton.isEnabled = false
+        }
+        
+    }
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
       

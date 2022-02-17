@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JLm-Hb-gZ4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -162,6 +162,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="switch" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-Qv-L0A">
                                 <rect key="frame" x="45" y="608" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onOff:" destination="rTp-sE-tbR" eventType="valueChanged" id="lgp-Oe-c8Z"/>
+                                </connections>
                             </switch>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YMW-Xc-rnd">
                                 <rect key="frame" x="45" y="448" width="324" height="34"/>
@@ -349,6 +352,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gx Icon - Color" translatesAutoresizingMaskIntoConstraints="NO" id="ytF-7G-FdY">
+                                <rect key="frame" x="110" y="392" width="194" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="T4T-TC-jjI"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mHn-Bf-aGd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -357,11 +366,14 @@
                             <constraint firstItem="ctx-mc-Ww8" firstAttribute="leading" secondItem="mHn-Bf-aGd" secondAttribute="leading" constant="20" id="6gY-u4-GSh"/>
                             <constraint firstItem="mHn-Bf-aGd" firstAttribute="trailing" secondItem="QXK-P6-9CU" secondAttribute="trailing" constant="20" id="BJ3-Oc-zfD"/>
                             <constraint firstItem="mHn-Bf-aGd" firstAttribute="trailing" secondItem="ctx-mc-Ww8" secondAttribute="trailing" constant="20" id="C9w-Qe-DzU"/>
+                            <constraint firstItem="ytF-7G-FdY" firstAttribute="leading" secondItem="mHn-Bf-aGd" secondAttribute="leading" constant="110" id="HQQ-v0-Al6"/>
                             <constraint firstItem="0ep-G0-Psw" firstAttribute="leading" secondItem="mHn-Bf-aGd" secondAttribute="leading" constant="20" id="KxW-ts-RzN"/>
                             <constraint firstItem="mHn-Bf-aGd" firstAttribute="trailing" secondItem="0ep-G0-Psw" secondAttribute="trailing" constant="20" id="Ojq-A1-Eyn"/>
                             <constraint firstItem="mHn-Bf-aGd" firstAttribute="trailing" secondItem="Wix-VY-zJU" secondAttribute="trailing" constant="20" id="OlT-Vu-nF7"/>
+                            <constraint firstItem="ytF-7G-FdY" firstAttribute="centerX" secondItem="QXK-P6-9CU" secondAttribute="centerX" id="Ort-pf-ccT"/>
                             <constraint firstItem="QXK-P6-9CU" firstAttribute="top" secondItem="0ep-G0-Psw" secondAttribute="bottom" constant="20" id="RaK-As-Jiy"/>
                             <constraint firstItem="0ep-G0-Psw" firstAttribute="top" secondItem="ctx-mc-Ww8" secondAttribute="bottom" constant="22" id="XbG-44-m5S"/>
+                            <constraint firstItem="mHn-Bf-aGd" firstAttribute="bottom" secondItem="ytF-7G-FdY" secondAttribute="bottom" constant="328" id="cgi-wA-IYZ"/>
                             <constraint firstItem="ctx-mc-Ww8" firstAttribute="top" secondItem="Wix-VY-zJU" secondAttribute="bottom" constant="25" id="hb6-5H-hmq"/>
                             <constraint firstItem="Wix-VY-zJU" firstAttribute="top" secondItem="mHn-Bf-aGd" secondAttribute="top" id="lhU-8P-uAg"/>
                             <constraint firstItem="Wix-VY-zJU" firstAttribute="leading" secondItem="mHn-Bf-aGd" secondAttribute="leading" constant="20" id="zGM-i6-ax5"/>
@@ -375,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7v-bM-zCc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2749" y="70"/>
+            <point key="canvasLocation" x="2747.826086956522" y="69.642857142857139"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="rZW-gz-nvJ">
@@ -434,11 +446,6 @@
                                     <constraint firstItem="g1t-jO-Mdh" firstAttribute="top" secondItem="U1m-M9-2uj" secondAttribute="bottom" constant="46" id="kDU-0n-skr"/>
                                     <constraint firstItem="g1t-jO-Mdh" firstAttribute="trailing" secondItem="0GF-HB-zpx" secondAttribute="trailing" id="tVK-mH-VsU"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="userEmail" destination="Kk7-d0-3GI" id="tB0-ec-Xyf"/>
-                                    <outlet property="userImage" destination="U1m-M9-2uj" id="GTq-Ej-Q5D"/>
-                                    <outlet property="userName" destination="g1t-jO-Mdh" id="fQc-Yu-QSc"/>
-                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3h-Pt-eF4">
                                 <rect key="frame" x="20" y="831" width="374" height="31"/>
@@ -465,7 +472,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="userView" destination="TNR-uA-pRg" id="T2K-xC-D5f"/>
+                        <outlet property="imageView" destination="U1m-M9-2uj" id="l8L-dg-7wH"/>
+                        <outlet property="userEmail" destination="Kk7-d0-3GI" id="Qm5-SV-FHl"/>
+                        <outlet property="userImage" destination="U1m-M9-2uj" id="mKy-io-Xhd"/>
+                        <outlet property="userName" destination="g1t-jO-Mdh" id="GXO-Zr-pBf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovb-Jo-utK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -576,6 +586,7 @@
     <resources>
         <image name="GalaxE Solutions - Color" width="9018" height="1538"/>
         <image name="GalaxE Solutions -White" width="18601" height="3601"/>
+        <image name="Gx Icon - Color" width="9001" height="9001"/>
         <image name="brain.head.profile" catalog="system" width="114" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
