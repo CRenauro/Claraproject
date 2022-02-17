@@ -71,38 +71,32 @@ class LoginViewController: UIViewController {
             return
         }
         self.showIndicator(message: "Authenticating")
-        
-        let loginURL = BASE_URL + LOGIN
-        var loginRequest = URLRequest(url: URL(string: loginURL)!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
-        
+        let loginURL = URL(string: "https://reqres.in/api/login")
+        var loginRequest = URLRequest(url: loginURL!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
         loginRequest.httpMethod = "POST"
-        
-//        loginRequest.addValue("Content-Type", forHTTPHeaderField: "application/JSON")
-        
-        
-        //create a dictionary
-        let params = ["email": emailField.text!, "password": passwordField.text!]
-        
-        //convert to JSON
+        loginRequest.addValue("application/JSON", forHTTPHeaderField: "Content-Type")
+        let params = ["email":emailField.text, "password":passwordField.text] as! Dictionary<String, String>
         loginRequest.httpBody = try?JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
         
         URLSession.shared.dataTask(with: loginRequest) { (data, response, error) in
-            guard let Data = data, error==nil else
+            guard error==nil else
             {
                 //switch to main thread
+                print (error as Any)
                 return
             }
-            if let httpStatus = (response as? HTTPURLResponse)
+            let status = (response as! HTTPURLResponse).statusCode
+            guard status == 200 else
             {
-                if(httpStatus.statusCode != 200)
-                {
-                    print(httpStatus.statusCode)
+                    print(status)
                     return
-                }
+                
             }
-            // update UI on Primary Thread/Ui Thread/ main thread
-            DispatchQueue.main.async {
-                self.getData(data: Data)
+            if let Data = data{
+                DispatchQueue.main.async {
+                    self.getData(data: Data)
+                }
+                print(NSHomeDirectory())
             }
             
         }.resume()
@@ -112,18 +106,28 @@ class LoginViewController: UIViewController {
     {
         self.hideIndicator()
         let response = try?JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, String>
-        var token = response!["token"]
-        print(token)
+        let token = response!["token"]
+        print(token!)
+        
+        UserDefaults.standard.setValue(token, forKey: "TOKEN")
+        
+        
+        
+        if let TOK = UserDefaults.standard.string(forKey: "TOKEN")
+                    {
+            print(TOK)
+        }
+        
+        
+        // navigation using manual segues
+        self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+        //  clear if the app allows logout feature. Otherwise defaults will be cleared on uninstallation
+        //  UserDefaults.resetStandardUserDefaults()
+        //remove individual options from user defaults
+        //UserDefaults.standard.removeObject(forKey: "TOKEN")
+        
+        
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

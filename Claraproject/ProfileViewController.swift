@@ -28,8 +28,12 @@ class ProfileViewController: UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5) // Left
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5) // Right
         
-//        ProfileView.dataSource = self
-//        ProfileView.delegate = self
+
+        
+//        userName.text = user!.first_name + "" + user!.last_name
+//        userEmail.text = user!.email
+//        userImage.image = Downloader.downloadImageWithURL(url: user!.avatar)
+        
             getUser()
         
         
