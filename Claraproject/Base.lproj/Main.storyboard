@@ -562,7 +562,6 @@
                     <navigationItem key="navigationItem" id="jKh-ki-lkl"/>
                     <connections>
                         <outlet property="cardView" destination="hdv-G5-jZN" id="HGC-Ux-BRg"/>
-                        <outlet property="imageView" destination="3Od-Ni-lOd" id="98S-vj-5eT"/>
                         <outlet property="userEmail" destination="7ov-sF-R4m" id="kOE-Uh-fZa"/>
                         <outlet property="userImage" destination="3Od-Ni-lOd" id="5aP-Si-4hC"/>
                         <outlet property="userName" destination="NSF-VU-cAr" id="osH-Bm-naN"/>

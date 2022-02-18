@@ -11,16 +11,14 @@ class Downloader{
     class func downloadImageWithURL(url: String) -> UIImage{
         let data = NSData(contentsOf: NSURL(string: url)! as URL)
         return UIImage(data: data! as Data)!
-        
     }
 }
 
 class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, AddUserProtocolDelegate {
     
-    var user = [User]()
+    var users = [User]()
 
     @IBOutlet weak var userView: UITableView!
-    var users = [User]()
     let itemsPerBatch = 15
     var currentRow: Int = 1
 
@@ -46,12 +44,6 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
 
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        if users.isEmpty
-        {
-            getUsersList()
-        }
-    }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,14 +54,13 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "User", for: indexPath) as! HomeTableViewCell
-        
         cell.userName.text = "\(users[indexPath.row].first_name)  \(users[indexPath.row].last_name)"
         cell.userEmail.text = users[indexPath.row].email
 
-        cell.userImage.image = Downloader.downloadImageWithURL(url: users[indexPath.row].avatar)
 
-       
-        print("here")
+        cell.userImage.image = Downloader.downloadImageWithURL(url: users[indexPath.row].avatar)
+        
+
         return cell
     }
     

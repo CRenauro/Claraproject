@@ -42,10 +42,10 @@ class AddNewUserViewController: UIViewController {
         addUserDelegate?.CancelAddingUser(self)
     }
     @IBAction func saveUser(_ sender: Any) {
-        let user = User(image: "cr.png", first: firstName.text!, last: lastName.text!, myEmail: email.text!)
+        let user = User(id: 12, image: "", first: firstName.text!, last: lastName.text!, myEmail: email.text!)
         addUserDelegate?.AddNewUser(self, user: user)
     }
-    
+   
 
     /*
     // MARK: - Navigation
