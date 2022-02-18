@@ -15,23 +15,22 @@ class User: Decodable {
     var email: String
     var photo: Data?
     
-    init(id: Int, image: String, first: String, last: String, myEmail: String){
-        self.id = id
+    init(image: String, first: String, last: String, myEmail: String){
+        print("constructor")
         first_name = first
         last_name = last
-//        avatar = image
+        avatar = image
         email = myEmail
-//        let image = Downloader.downloadImageWithURL(url: avatar)
-        self.avatar = "cr"
-       
+        
+        id = 12
     }
-//    enum CodingKeys: String, CodingKey{
-//        case id
-//        case email
-//        case first_name = "first_name"
-//        case last_name = "last_name"
-//        case avatar = "avatar"
-//    }
+    enum CodingKeys: String, CodingKey{
+        case id
+        case email
+        case first_name = "first_name"
+        case last_name = "last_name"
+        case avatar = "avatar"
+    }
 }
 
 class Result: Decodable {
@@ -40,7 +39,6 @@ class Result: Decodable {
 }
 
 class Result2: Decodable {
-    let total: Int
     let data: User
     
 

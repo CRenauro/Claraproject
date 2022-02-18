@@ -52,10 +52,10 @@ class ProfileViewController: UIViewController {
         cardView.layer.borderWidth = 2.0
         //Image view 100x100
         //Radius 50
-//        self.imageView.layer.cornerRadius=self.imageView.frame.size.width/2
-//        self.imageView.clipsToBounds = true
-//        self.imageView.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
-//        self.imageView.layer.borderWidth = 2
+        self.userImage.layer.cornerRadius=self.userImage.frame.size.width/2
+        self.userImage.clipsToBounds = true
+        self.userImage.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
+        self.userImage.layer.borderWidth = 2
         
     }
 
