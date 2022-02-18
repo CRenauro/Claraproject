@@ -28,9 +28,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     
     @IBOutlet weak var userEmail: UILabel!
-    
-    
-    
+
     @IBOutlet weak var imageView: UIImageView!
     
     
@@ -46,13 +44,12 @@ class UserDetailViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5) // Left
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5) // Right
-       
+         
     }
-    override var shouldAutorotate: Bool {
-           return false
-       }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         
         cardView.layer.cornerRadius = 12
         cardView.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
         cardView.layer.borderWidth = 2.0

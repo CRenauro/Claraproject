@@ -413,7 +413,7 @@
                                             <constraint firstAttribute="height" constant="102" id="aay-5c-8kR"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-jO-Mdh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clara" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-jO-Mdh">
                                         <rect key="frame" x="20" y="302" width="334" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="nxX-TN-k8S"/>
@@ -422,11 +422,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk7-d0-3GI">
-                                        <rect key="frame" x="20" y="391" width="334" height="46"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cr@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk7-d0-3GI">
+                                        <rect key="frame" x="20" y="420" width="334" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="VRM-56-KDU"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Renauro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-Nw-bsS">
+                                        <rect key="frame" x="20" y="365" width="334" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -441,7 +448,7 @@
                                     <constraint firstItem="0GF-HB-zpx" firstAttribute="centerX" secondItem="TNR-uA-pRg" secondAttribute="centerX" id="QJ7-Il-KxO"/>
                                     <constraint firstItem="g1t-jO-Mdh" firstAttribute="leading" secondItem="Kk7-d0-3GI" secondAttribute="leading" id="Sp8-J0-VaQ"/>
                                     <constraint firstItem="U1m-M9-2uj" firstAttribute="top" secondItem="0GF-HB-zpx" secondAttribute="bottom" constant="27" id="Uta-PV-ck1"/>
-                                    <constraint firstItem="Kk7-d0-3GI" firstAttribute="top" secondItem="g1t-jO-Mdh" secondAttribute="bottom" constant="45" id="WmJ-Co-LGz"/>
+                                    <constraint firstItem="Kk7-d0-3GI" firstAttribute="top" secondItem="g1t-jO-Mdh" secondAttribute="bottom" constant="74" id="WmJ-Co-LGz"/>
                                     <constraint firstItem="0GF-HB-zpx" firstAttribute="leading" secondItem="TNR-uA-pRg" secondAttribute="leading" constant="20" id="bXo-aS-tl5"/>
                                     <constraint firstItem="g1t-jO-Mdh" firstAttribute="top" secondItem="U1m-M9-2uj" secondAttribute="bottom" constant="46" id="kDU-0n-skr"/>
                                     <constraint firstItem="g1t-jO-Mdh" firstAttribute="trailing" secondItem="0GF-HB-zpx" secondAttribute="trailing" id="tVK-mH-VsU"/>
@@ -472,16 +479,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="U1m-M9-2uj" id="l8L-dg-7wH"/>
-                        <outlet property="userEmail" destination="Kk7-d0-3GI" id="Qm5-SV-FHl"/>
-                        <outlet property="userImage" destination="U1m-M9-2uj" id="mKy-io-Xhd"/>
-                        <outlet property="userName" destination="g1t-jO-Mdh" id="GXO-Zr-pBf"/>
+                        <outlet property="cardView" destination="TNR-uA-pRg" id="HrY-Tf-3RU"/>
+                        <outlet property="emailLabel" destination="Kk7-d0-3GI" id="J01-cw-6OY"/>
+                        <outlet property="firstNameLabel" destination="g1t-jO-Mdh" id="RZr-lm-cTd"/>
+                        <outlet property="lastNameLabel" destination="DOZ-Nw-bsS" id="wbh-2L-kQ0"/>
+                        <outlet property="userImage" destination="U1m-M9-2uj" id="Okh-ce-fti"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovb-Jo-utK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Y8j-ib-vrE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3474" y="70"/>
+            <point key="canvasLocation" x="3473.913043478261" y="69.642857142857139"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="VlM-Wp-lh1">

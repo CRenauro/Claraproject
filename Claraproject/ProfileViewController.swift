@@ -11,15 +11,17 @@ import UIKit
 class ProfileViewController: UIViewController {
     
 
-    var users = [User]()
-    
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userEmail: UILabel!
-
-    @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var cardView: UIView!
 
+    @IBOutlet weak var firstNameLabel: UILabel!
+    
+    @IBOutlet weak var lastNameLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    var user : User!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,19 +35,10 @@ class ProfileViewController: UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5) // Left
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5) // Right
         
-
         
-//        userName.text = user!.first_name + "" + user!.last_name
-//        userEmail.text = user!.email
-//        userImage.image = Downloader.downloadImageWithURL(url: user!.avatar)
-        
-        
-
-        
+        ///
             getUser()
-        
-        
-
+        ///
     }
 
 
@@ -54,18 +47,22 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if users.isEmpty
-        {
-            getUser()
-        }
+        cardView.layer.cornerRadius = 12
+        cardView.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
+        cardView.layer.borderWidth = 2.0
+        //Image view 100x100
+        //Radius 50
+//        self.imageView.layer.cornerRadius=self.imageView.frame.size.width/2
+//        self.imageView.clipsToBounds = true
+//        self.imageView.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
+//        self.imageView.layer.borderWidth = 2
+        
     }
-    
-    
-    
+
     func getUser()
     {
         
-        let userURL = URL(string: BASE_URL + USERS)!
+        let userURL = URL(string: BASE_URL+PERSON)!
         let userRequest = URLRequest(url: userURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         
         URLSession.shared.dataTask(with: userRequest){
@@ -92,12 +89,17 @@ class ProfileViewController: UIViewController {
         
     }
     func extractData(data: Data){
-          print("Got data!")
-          hideIndicator()
-        let users = try? JSONDecoder().decode(Result.self, from: data)
-//          print(users?.total)
-          self.users = users!.data
-//          userView.reloadData()
+        print("Got data!")
+        hideIndicator()
+        let user1 = try? JSONDecoder().decode(Result2.self, from: data)
+        print(user1!)
+        self.user = user1!.data
+        firstNameLabel.text = user!.first_name
+        lastNameLabel.text = user!.last_name
+        emailLabel.text = user!.email
+        
+        userImage.image = UIImage(data: user!.image!)!
+        print(user!.first_name)
         
       }
     
