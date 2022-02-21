@@ -67,11 +67,13 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
 
     func getUsersList()
     {
-//        if !Utilities.isNetworkAvailable()
-//        {
-//            showAlert(title: "No network", message: "No Network. Please check your connection")
-//        }
-//        showIndicator(message: "getting users")
+        if !Utilities.isNetworkAvailable()
+        {
+            showAlert(title: "No network", message: "No Network. Please check your connection")
+        }
+        showIndicator(message: "getting users")
+        
+        
         let userURL = URL(string: BASE_URL + USERS)!
         let userRequest = URLRequest(url: userURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         

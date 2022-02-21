@@ -27,16 +27,6 @@ class LoginViewController: UIViewController {
 
     }
 
-
-    //    override func viewWillAppear(_ animated: Bool) {
-//        loginView.layer.cornerRadius = 12
-//        loginView.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
-//        loginView.layer.borderWidth = 2.0
-//        //Image view 100x100
-//        //Radius 50
-//    }
-    
-    
     override func viewDidAppear(_ animated: Bool) {
 //        var network = "NA"
 //        if(network != "available"){

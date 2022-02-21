@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JLm-Hb-gZ4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -414,7 +414,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clara" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1t-jO-Mdh">
-                                        <rect key="frame" x="20" y="302" width="334" height="44"/>
+                                        <rect key="frame" x="20" y="285" width="334" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="nxX-TN-k8S"/>
                                         </constraints>
@@ -423,7 +423,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cr@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk7-d0-3GI">
-                                        <rect key="frame" x="20" y="420" width="334" height="46"/>
+                                        <rect key="frame" x="20" y="393" width="334" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="VRM-56-KDU"/>
                                         </constraints>
@@ -432,7 +432,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Renauro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-Nw-bsS">
-                                        <rect key="frame" x="20" y="365" width="334" height="39"/>
+                                        <rect key="frame" x="20" y="340" width="334" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -448,9 +448,9 @@
                                     <constraint firstItem="0GF-HB-zpx" firstAttribute="centerX" secondItem="TNR-uA-pRg" secondAttribute="centerX" id="QJ7-Il-KxO"/>
                                     <constraint firstItem="g1t-jO-Mdh" firstAttribute="leading" secondItem="Kk7-d0-3GI" secondAttribute="leading" id="Sp8-J0-VaQ"/>
                                     <constraint firstItem="U1m-M9-2uj" firstAttribute="top" secondItem="0GF-HB-zpx" secondAttribute="bottom" constant="27" id="Uta-PV-ck1"/>
-                                    <constraint firstItem="Kk7-d0-3GI" firstAttribute="top" secondItem="g1t-jO-Mdh" secondAttribute="bottom" constant="74" id="WmJ-Co-LGz"/>
+                                    <constraint firstItem="Kk7-d0-3GI" firstAttribute="top" secondItem="g1t-jO-Mdh" secondAttribute="bottom" constant="64" id="WmJ-Co-LGz"/>
                                     <constraint firstItem="0GF-HB-zpx" firstAttribute="leading" secondItem="TNR-uA-pRg" secondAttribute="leading" constant="20" id="bXo-aS-tl5"/>
-                                    <constraint firstItem="g1t-jO-Mdh" firstAttribute="top" secondItem="U1m-M9-2uj" secondAttribute="bottom" constant="46" id="kDU-0n-skr"/>
+                                    <constraint firstItem="g1t-jO-Mdh" firstAttribute="top" secondItem="U1m-M9-2uj" secondAttribute="bottom" constant="29" id="kDU-0n-skr"/>
                                     <constraint firstItem="g1t-jO-Mdh" firstAttribute="trailing" secondItem="0GF-HB-zpx" secondAttribute="trailing" id="tVK-mH-VsU"/>
                                 </constraints>
                             </view>
