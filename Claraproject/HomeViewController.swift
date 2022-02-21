@@ -17,6 +17,7 @@ class Downloader{
 class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, AddUserProtocolDelegate {
     
     var users = [User]()
+    
 
     @IBOutlet weak var userView: UITableView!
     let itemsPerBatch = 15
@@ -27,7 +28,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Home"
+        title = "Home Page"
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -56,15 +57,12 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "User", for: indexPath) as! HomeTableViewCell
         cell.userName.text = "\(users[indexPath.row].first_name)  \(users[indexPath.row].last_name)"
         cell.userEmail.text = users[indexPath.row].email
-
-
         cell.userImage.image = Downloader.downloadImageWithURL(url: users[indexPath.row].avatar)
         
 
         return cell
     }
-    
-
+   
     func getUsersList()
     {
         if !Utilities.isNetworkAvailable()
@@ -72,8 +70,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
             showAlert(title: "No network", message: "No Network. Please check your connection")
         }
         showIndicator(message: "getting users")
-        
-        
+
         let userURL = URL(string: BASE_URL + USERS)!
         let userRequest = URLRequest(url: userURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         
@@ -100,6 +97,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         }.resume()
         
     }
+
     func extractData(data: Data){
           print("Got data!")
           hideIndicator()

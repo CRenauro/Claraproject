@@ -289,6 +289,12 @@
                         <barButtonItem title="Item" id="nap-fO-VY9"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="5wo-KS-G7i">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="escape" catalog="system" id="OK5-nW-ghs">
+                            <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="htJ-td-syJ"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="eRa-O2-67u">
                                 <color key="tintColor" systemColor="systemGreenColor"/>
@@ -311,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0eA-2s-ghO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2045" y="70"/>
+            <point key="canvasLocation" x="2049" y="70"/>
         </scene>
         <!--Add New User View Controller-->
         <scene sceneID="SAc-Ko-AjB">
@@ -569,7 +575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEw-gc-5LM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4168" y="70"/>
+            <point key="canvasLocation" x="4172" y="78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gq5-dy-N2O">
@@ -595,6 +601,7 @@
         <image name="GalaxE Solutions -White" width="18601" height="3601"/>
         <image name="Gx Icon - Color" width="9001" height="9001"/>
         <image name="brain.head.profile" catalog="system" width="114" height="128"/>
+        <image name="escape" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -19,7 +19,7 @@ import UIKit
 class UserDetailViewController: UIViewController {
     
     var user: User?
-    
+  
     
     @IBOutlet weak var cardView: UIView!
     
@@ -57,6 +57,8 @@ class UserDetailViewController: UIViewController {
         self.userImage.clipsToBounds = true
         self.userImage.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
         self.userImage.layer.borderWidth = 2
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.systemGreen
         
     }
     override func viewDidAppear(_ animated: Bool) {
