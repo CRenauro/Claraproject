@@ -17,6 +17,7 @@ class Downloader{
 class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, AddUserProtocolDelegate {
     
     var users = [User]()
+   
     
 
     @IBOutlet weak var userView: UITableView!
@@ -51,12 +52,19 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         print(users.count)
         return users.count
     }
+    
+
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "User", for: indexPath) as! HomeTableViewCell
         cell.userName.text = "\(users[indexPath.row].first_name)  \(users[indexPath.row].last_name)"
         cell.userEmail.text = users[indexPath.row].email
         cell.userImage.image = Downloader.downloadImageWithURL(url: users[indexPath.row].avatar)
+        
+        cell.userImage.layer.cornerRadius=cell.userImage.frame.size.width/2
+        cell.userImage.clipsToBounds = true
+        cell.userImage.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.06274509804, green: 0.4470588235, blue: 0.7294117647, alpha: 1).cgColor).cgColor
+        cell.userImage.layer.borderWidth = 2
 
 
         return cell
