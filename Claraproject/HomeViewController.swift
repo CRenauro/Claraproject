@@ -37,7 +37,6 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5) // Left
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5) // Right
         
-       
         
         userView.dataSource = self
         userView.delegate = self
@@ -58,7 +57,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         cell.userName.text = "\(users[indexPath.row].first_name)  \(users[indexPath.row].last_name)"
         cell.userEmail.text = users[indexPath.row].email
         cell.userImage.image = Downloader.downloadImageWithURL(url: users[indexPath.row].avatar)
-        
+
 
         return cell
     }

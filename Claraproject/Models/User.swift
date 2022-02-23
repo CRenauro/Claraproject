@@ -16,7 +16,6 @@ class User: Decodable {
     var photo: Data?
     
     init(image: String, first: String, last: String, myEmail: String){
-        print("constructor")
         first_name = first
         last_name = last
         avatar = image
