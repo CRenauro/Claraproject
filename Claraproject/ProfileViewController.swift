@@ -43,6 +43,7 @@ class ProfileViewController: UIViewController {
 
 
     @IBAction func logOut(_ sender: UIButton) {
+        
         self.dismiss(animated: true, completion: nil)
     }
     
